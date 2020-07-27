@@ -1,36 +1,15 @@
-const colorBtn = document.querySelector('.colorBtn');
-const bodyBcg = document.querySelector('body');
-
-//hex color page
-const hexNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
-const hexBtn = document.querySelector('.hexBtn');
-const hex = document.querySelector('.hex');
-
-
-
-const colors = ['yellow', 'red', 'green', '#3b5998'];
-
-hexBtn.addEventListener('click', getHex);
-
-
-function getHex() {
-    let hexCol = "#";
-
-    for (i = 0; i < 6; i++) {
-        let random = Math.floor(Math.random() * hexNumbers.length);
-        hexCol += hexNumbers[random];
-
-    }
-
-    console.log(hexCol);
-
-    bodyBcg.style.backgroundColor = hexCol;
-    hex.innerHTML = hexCol;
+if (navigator.userAgent.indexOf("Mobi") === -1) {
+    document.querySelector(".message").style.display = "block";
 }
 
-// function changeColor() {
+// create PanoViewer with option
+var PanoViewer = eg.view360.PanoViewer;
+var container = document.getElementById("myPanoViewer");
+var panoViewer = new PanoViewer(container, {
+    image: "https://naver.github.io/egjs-view360/examples/panoviewer/controls/equi-car-inside.jpg",
+    projectionType: "equirectangular"
+});
 
-//     //  bodyBcg.style.backgroundColor = 'blue';
-//     let random = Math.floor(Math.random() * colors.length)
-//     bodyBcg.style.backgroundColor = colors[random];
-// }
+var panoviewerSet = document.getElementById("panoSet");
+PanoControls.init(panoviewerSet, panoViewer, { enableGyroOption: true, enableTouchOption: true });
+PanoControls.showLoading();
