@@ -1,77 +1,34 @@
-<!DOCTYPE html>
-<html lang="en" class="loading">
+<!DOCTYPE HTML>
+<html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #myPanoViewer {
+            position: relative;
+            /* Must be relative or absolute.*/
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
 
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi'>
+<body>
 
-    <link rel="stylesheet" href="MaterialPack\material.min.css">
-    <link rel="stylesheet" href="https://naver.github.io/egjs-view360/common/css/demo.css">
-    <link rel="stylesheet" href="https://naver.github.io/egjs-view360/common/css/PanoControls.css">
-    <script src="MaterialPack\material.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <div id="myPanoViewer"></div>
+    <script src="//naver.github.io/egjs-view360/release/latest/dist/PanoViewer/view360.panoviewer.pkgd.min.js"></script>
+    <script>
+        // create PanoViewer with option
+        var PanoViewer = eg.view360.PanoViewer;
+        var container = document.getElementById("myPanoViewer"); // Area where the image will be displayed(HTMLElement)
 
-    <title>Maple Syrup</title>
+        var panoViewer = new PanoViewer(container, {
+            // If projectionType is not specified, the default is "equirectangular".
+            image: "equirectangular.png" // Specifies an image of the "equirectangular" type.
+        });
+    </script>
 
-    <link rel="stylesheet" href="main.css">
-
-
-    <body>
-        <header>
-            <div class="home">
-                <a href="https://naver.github.io/egjs-view360/panoviewer.html">
-                    <img class="egjs_logo" src="https://naver.github.io/egjs-view360/examples/panoviewer/controls/../../../common/img/type_black.svg"> PanoViewer
-                </a>
-                <!--//logo-->
-            </div>
-            <h1>Device Motion (Gyro Mode) & Touch</h1>
-            <div class="icon">
-                <div class="phone"></div>
-                <div class="rotate"></div>
-            </div>
-            <div class="infos">
-                <p class="info">
-                    <span class="head">projection</span>: <a href="https://naver.github.io/egjs-view360/release/latest/doc/eg.view360.PanoViewer.PROJECTION_TYPE.html#.EQUIRECTANGULAR" target="_blank"><span class="value">EQUIRECTANGULAR</span></a>
-                </p>
-                <p class="info">
-                    <span class="head">image</span>: <a href="https://naver.github.io/egjs-view360/examples/panoviewer/controls/equi-car-inside.jpg" target="_blank"><span class="value">equi-car-inside.jpg</span></a>
-                </p>
-            </div>
-        </header>
-        <div class="message" style="display: none">
-            Gyro mode can be tested on <span style="font-size: 1.14em;color:#912d2b">Mobile Device</span> (gyro enabled)
-        </div>
-        <div class="message" style="display: none">
-            If you want to know the difference of 2 way and 3 way in gyrMode. Please reference this <a target="_blank" href="https://github.com/naver/egjs-view360/wiki/Changing-the-View-by-Motion">Guide</a>
-        </div>
-        <div class="panoviewer-container viewer">
-            <div id="panoSet">
-                <div class="panoviewer container" id="myPanoViewer"></div>
-            </div>
-        </div>
-        <div class="source">
-            <pre>var container = document.getElementById("myPanoViewer");
-    var panoViewer = new eg.view360.PanoViewer(container, {
-    image: <a href="https://naver.github.io/egjs-view360/examples/panoviewer/controls/equi-car-inside.jpg" target="_blank">"./equi-car-inside.jpg"</a>,
-    projectionType: <a href="https://naver.github.io/egjs-view360/release/latest/doc/eg.view360.PanoViewer.PROJECTION_TYPE.html#.EQUIRECTANGULAR" target="_blank">"equirectangular"</a>
-    });
-        </pre>
-        </div>
-
-    </body>
-    <script src="https://naver.github.io/egjs-view360/common/js/jquery-2.2.4.js"></script>
-    <script src="https://naver.github.io/egjs-view360/common/js/qrcode.js"></script>
-    <script src="https://naver.github.io/egjs-view360/common/js/screenfull.min.js"></script>
-    <script src="https://naver.github.io/egjs-view360/common/js/PieView.js"></script>
-    <script src="https://naver.github.io/egjs-view360/common/js/GyroTouchOptions.js"></script>
-    <script src="https://naver.github.io/egjs-view360/release/latest/dist/view360.pkgd.js"></script>
-    <script src="https://naver.github.io/egjs-view360/common/js/PanoControls.js"></script>
-    <script src="https://naver.github.io/egjs-view360/release/latest/dist/view360.pkgd.js"></script>
-    <script src="https://naver.github.io/egjs-view360/common/js/PanoControls.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.7.2/dist/sweetalert2.all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/webxr-polyfill@2.0.1/build/webxr-polyfill.min.js"></script>
-    <script src="https://naver.github.io/egjs-view360/common/js/initXR.js"></script>
+</body>
 
 </html>

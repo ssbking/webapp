@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>View360 VR Demo</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./src/styles.css">
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Zilla+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+    <script src='https://cdn.jsdelivr.net/npm/webxr-polyfill@latest/build/webxr-polyfill.js'></script>
+    <script type="text/javascript">
+        function load() {
+            window.scrollTo(0, 0);
+        }
+    </script>
+</head>
+
+<body style="height: 100vh!important;" onload="load()">
+    <header>
+        <a class="logo-link" href="https://naver.github.io/egjs-view360">
+            <div class="egjs-logo"><span class="logo-eg">eg</span><span class="logo-js">js</span></div>
+            <span class="egjs-text">view360</span>
+        </a>
+    </header>
+    <section>
+        <div class="container">
+            <div class="pano-wrapper">
+                <div id="pano"></div>
+                <div class="pano-buttons">
+                    <div class="button" id="enter-vr">
+                        <svg id="vr-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+								<g>
+									<path d="M5,30 L95,30 L95,80 L55,80 L50,70 L45,80 L5,80 L5,30" fill="transparent" stroke="#fff" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+									<path d="M5,30 L15,10 L85,10 L95,30" fill="transparent" stroke="#fff" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+									<circle cx="30" cy="55" r="10" stroke="#fff" stroke-width="8" fill="transparent" />
+									<circle cx="70" cy="55" r="10" stroke="#fff" stroke-width="8" fill="transparent" />
+								</g>
+							</svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="instructions">
+            <li>View360 VR dev guide:
+                <a href="https://github.com/naver/egjs-view360/wiki/Checklist-for-the-Sensor-and-VR">Guide</a> (
+                <a href="https://github.com/naver/egjs-view360/wiki/Checklist-for-the-Sensor-and-VR-%7C-%ED%95%9C%EA%B5%AD%EC%96%B4">한국어</a>)
+            </li>
+            <li>Check the source of this page: <a href="https://codesandbox.io/s/view360-vr-demo-fiqxh">Source</a></li>
+        </div>
+    </footer>
+    <script src="src/index.js"></script>
+</body>
+
+</html>
