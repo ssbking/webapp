@@ -18,9 +18,9 @@
 <body>
     <div class="qrcode">X</div>
 
-    <div id="myPanoViewer" style="opacity: 0.5;"></div>
+    <div id="myPanoViewer" style="opacity: 0.7;"></div>
 
-    <header>
+    <header style="top: 10px; position : absolute;">
         <h1>this is text over pan #myPanoViewer</h1>
     </header>
 
@@ -32,7 +32,7 @@
 
         var panoViewer = new PanoViewer(container, {
             // If projectionType is not specified, the default is "equirectangular".
-            image: "VRpics/equirectangular.png", // Specifies an image of the "equirectangular" type.
+            image: "VRpics/vr1.jpg", // Specifies an image of the "equirectangular" type.
             gyroMode: "VR"
 
         });
