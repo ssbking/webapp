@@ -5,6 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="qrcode.js"></script>
+
+    <!-- frontend lib -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
     <style>
         #myPanoViewer {
             position: relative;
@@ -19,7 +25,12 @@
     <div class="qrcode">X</div>
 
     <div id="myPanoViewer" style="opacity: 0.7;"></div>
-
+    <div class="btn"><button onclick="javascript:function nxtpic()">second pic</button></div>
+    <script>
+        function nxtpic() {
+            console.log("okey");
+        }
+    </script>
     <header style="top: 10px; position : absolute;">
         <h1>this is text over pan #myPanoViewer</h1>
     </header>
@@ -29,15 +40,20 @@
         // create PanoViewer with option
         var PanoViewer = eg.view360.PanoViewer;
         var container = document.getElementById("myPanoViewer"); // Area where the image will be displayed(HTMLElement)
-
+        const img = "VRpics/vr1.jpg";
         var panoViewer = new PanoViewer(container, {
             // If projectionType is not specified, the default is "equirectangular".
-            image: "VRpics/vr1.jpg", // Specifies an image of the "equirectangular" type.
+            image: img, // Specifies an image of the "equirectangular" type.
             gyroMode: "VR"
 
         });
     </script>
-
+    <div id="content"> </div>
+    <script>
+        function load_home() {
+            document.getElementById("content").innerHTML = '<object type="type/html" data="https://ssbking.github.io/webapp/inside_app/index.html" ></object>';
+        }
+    </script>
 </body>
 
 </html>
