@@ -18,7 +18,11 @@
 <body>
     <div class="qrcode">X</div>
 
-    <div id="myPanoViewer"></div>
+    <div id="myPanoViewer" style="opacity: 0.5;"></div>
+
+    <header>
+        <h1>this is text over pan #myPanoViewer</h1>
+    </header>
 
     <script src="//naver.github.io/egjs-view360/release/latest/dist/PanoViewer/view360.panoviewer.pkgd.min.js"></script>
     <script>
@@ -28,7 +32,7 @@
 
         var panoViewer = new PanoViewer(container, {
             // If projectionType is not specified, the default is "equirectangular".
-            image: "Big_ben_equirectangular.jpg", // Specifies an image of the "equirectangular" type.
+            image: "VRpics/equirectangular.png", // Specifies an image of the "equirectangular" type.
             gyroMode: "VR"
 
         });
